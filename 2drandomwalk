@@ -20,7 +20,7 @@ print(origin)
 pathx.append(origin[0])
 pathy.append(origin[1])
 atorigin = True  
-multiplier = 1
+multiplier = 1 #made an accelerator to speed up the walk when it is furthur out so that it is able to generate very large walks quickly
 x=0
 while(atorigin):
   distance = (origin[0] **2 + origin[1] **2)**.5 - 100 * multiplier
