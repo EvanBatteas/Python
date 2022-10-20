@@ -20,9 +20,10 @@ print(origin)
 pathx.append(origin[0])
 pathy.append(origin[1])
 atorigin = True  
-multiplier = 1 #made an accelerator to speed up the walk when it is furthur out so that it is able to generate very large walks quickly
+multiplier = 1
 x=0
-while(atorigin):
+try:
+ while(atorigin):
   distance = (origin[0] **2 + origin[1] **2)**.5 - 100 * multiplier
   if(distance > 100):
     multiplier = 2 +x
@@ -46,6 +47,9 @@ while(atorigin):
   #plt.plot(pathx,pathy) 
   if(origin[0] == 0 and origin[1] == 0):
     atorigin = False 
-  #print(origin) 
+  #print(origin)
+except KeyboardInterrupt:
+     plt.plot(pathx,pathy,'green') #if it takes too long to retun, i can stop it and it will plot
+     plt.plot(0,0,'.',color='red')
 plt.plot(pathx,pathy,'green')
 plt.plot(0,0,'.',color='red')
